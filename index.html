@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Ahmed | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- خطوط جوجل الاحترافية -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- مكتبة Font Awesome لشعارات لغات البرمجة -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- الكشاف اللي هيلحق الماوس وينور وراه -->
+    <div class="mouse-glow" id="mouseGlow"></div>
+
+    <div class="container">
+        <!-- قسم الـ Hero (الاسم في النص بلون فاخر) -->
+        <header class="hero-section centered">
+            <span class="badge">Available for Projects</span>
+            <h1 class="gradient-name">MOHAMED AHMED</h1>
+            <p class="subtitle">2nd-Year Computer Science Student @ Thebes Academy</p>
+            <p class="location">📍 Qalyubia, Egypt</p>
+            
+            <!-- أزرار التواصل السريع -->
+            <div class="cta-buttons centered-flex">
+                <a href="mailto:mido2892006@gmail.com" class="btn btn-primary">Email Me</a>
+                <a href="https://www.linkedin.com/in/mohamed-ahmed-a2a799354" target="_blank" class="btn btn-secondary">LinkedIn</a>
+                <a href="tel:+201063818055" class="btn btn-text">📞 +201063818055</a>
+            </div>
+        </header>
+
+        <!-- قسم الملخص الشخصي -->
+        <section class="section">
+            <h2>Summary</h2>
+            <p class="summary-text">
+                A proactive 2nd-year Computer Science student at Thebes Academy. Possesses a strong foundation in software development, web tools, and network infrastructure. Certified by Cisco in Cybersecurity, and highly motivated to leverage programming skills and AI applications within digital transformation environments.
+            </p>
+        </section>
+
+        <!-- قسم التعليم والمهارات بالأيقونات -->
+        <div class="grid-2col">
+            <section class="section">
+                <h2>Education</h2>
+                <div class="card education-card">
+                    <h3>Bachelor of Computer Science</h3>
+                    <p class="institution">Thebes Academy, Maadi - Cairo</p>
+                    <p class="date">Expected June 2028 | Currently in 2nd Year</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Technical Skills & Tools</h2>
+                <div class="skills-grid">
+                    <div class="skill-tag"><i class="fab fa-html5" style="color: #e34c26;"></i> HTML5</div>
+                    <div class="skill-tag"><i class="fab fa-css3-alt" style="color: #264de4;"></i> CSS3</div>
+                    <div class="skill-tag"><i class="fab fa-js" style="color: #f7df1e;"></i> JavaScript</div>
+                    <div class="skill-tag"><i class="fas fa-network-wired" style="color: #00f2fe;"></i> Networking</div>
+                    <div class="skill-tag"><i class="fas fa-shield-alt" style="color: #ff4a5a;"></i> Cybersecurity</div>
+                    <div class="skill-tag"><i class="fas fa-code" style="color: #007acc;"></i> VS Code</div>
+                    <div class="skill-tag"><i class="fab fa-github" style="color: #fff;"></i> GitHub</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- قسم الشهادات الاحترافية -->
+        <section class="section">
+            <h2>Professional Certifications</h2>
+            <div class="certs-container">
+                <div class="card cert-card">
+                    <div class="cert-icon"><i class="fas fa-user-shield" style="color: #00f2fe;"></i></div>
+                    <div>
+                        <h3>Introduction to Cybersecurity</h3>
+                        <p>Cisco Networking Academy</p>
+                    </div>
+                </div>
+                <div class="card cert-card">
+                    <div class="cert-icon"><i class="fas fa-user-ninja" style="color: #4facfe;"></i></div>
+                    <div>
+                        <h3>Cybersecurity Essentials</h3>
+                        <p>Junior Cybersecurity Analyst Path — Cisco Networking Academy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- الفوتر -->
+        <footer>
+            <p>© 2026 Mohamed Ahmed. Built with Passion.</p>
+        </footer>
+    </div>
+
+    <!-- كود الجافا سكريبت السحري لتتبع الماوس بالنور -->
+    <script>
+        const glow = document.getElementById('mouseGlow');
+        document.addEventListener('mousemove', (e) => {
+            // تحديث مكان الكشاف مع حركة الماوس وسنترته
+            glow.style.left = e.clientX - 150 + 'px';
+            glow.style.top = e.clientY - 150 + 'px';
+        });
+    </script>
+</body>
+</html>

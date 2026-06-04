@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #060913;
+    --card-bg: rgba(15, 23, 42, 0.45);
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --accent-gold: #f59e0b;      /* اللون الذهبي الفاخر للاسم */
+    --accent-cyan: #00f2fe;      /* لون النيون للشبكات */
+    --accent-purple: #7c3aed;    /* لون الماوس واللمسات */
+    --border-color: rgba(255, 255, 255, 0.06);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* كشاف الماوس الذي يتبع الحركة (Mouse Glow) */
+.mouse-glow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, rgba(0, 242, 254, 0.03) 50%, rgba(0,0,0,0) 70%);
+    border-radius: 50%;
+    z-index: 9999; /* عشان يفضل فوق الكروت وينور عليها */
+    pointer-events: none; /* عشان ما يغطيش على الضغطات بالماوس */
+    transition: transform 0.1s ease-out;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+/* تنسيقات السنترة للواجهة */
+.hero-section.centered {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+/* تدرج لوني فاخر جداً للاسم (ذهبي بلاتينيوم ملكي) */
+.gradient-name {
+    font-size: 3.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #ffe066 0%, #f59e0b 50%, #ca8a04 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 2px 10px rgba(245, 158, 11, 0.2));
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #a78bfa;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.location {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.centered-flex {
+    justify-content: center;
+}
+
+.cta-buttons {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* الأزرار */
+.btn {
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #003efa, #00cbfe);
+    color: #000;
+    box-shadow: 0 4px 20px rgba(11, 97, 245, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(11, 120, 245, 0.45);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--accent-cyan);
+    transform: translateY(-3px);
+}
+
+.btn-text {
+    color: var(--text-muted);
+}
+
+/* الأقسام والكروت */
+.section {
+    margin-bottom: 4rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 25%;
+    height: 50%;
+    width: 4px;
+    background: var(--accent-cyan);
+    border-radius: 4px;
+}
+
+.summary-text {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    background: var(--card-bg);
+    padding: 1.8rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(12px);
+}
+
+.grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .grid-2col { grid-template-columns: 1fr; }
+    .gradient-name { font-size: 2.8rem; }
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 1.8rem;
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 242, 254, 0.25);
+    box-shadow: 0 10px 30px rgba(0, 242, 254, 0.05);
+}
+
+.education-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.institution {
+    color: var(--accent-cyan);
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+
+.date {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* تاجات المهارات المحدثة بالأيقونات */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skill-tag {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px; /* مسافة بين الشعار والكلام */
+    transition: all 0.3s ease;
+}
+
+.skill-tag i {
+    font-size: 1.1rem;
+}
+
+.skill-tag:hover {
+    border-color: var(--accent-cyan);
+    background: rgba(0, 242, 254, 0.04);
+    transform: scale(1.05);
+}
+
+/* كروت الشهادات */
+.certs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.cert-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.cert-icon {
+    font-size: 1.8rem;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.cert-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: 6rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+}
